@@ -21,10 +21,12 @@ import {
 function App() {
   return (
     <div>
-      <TopNaveber></TopNaveber>
+      
              <Router>
+             <TopNaveber></TopNaveber>
           <Switch>
             <Route path="/Home">
+
               <Home />
             </Route>
 
@@ -40,8 +42,6 @@ function App() {
              <Admin/>
             </Route>
 
-            
-
             <Route path="/Contact">
              <Contact/>
             </Route>
@@ -53,8 +53,12 @@ function App() {
             <Route path="/Deals">
               <Deals/>
             </Route>
-            <Route path="/Login">
+            <Route path="/Login_1">
               <LoginPageOne/>
+            </Route>
+
+            <Route path="/LogIn_2">
+              <LogInPageTwo/>
             </Route>
 
           </Switch>

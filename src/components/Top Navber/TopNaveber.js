@@ -40,48 +40,65 @@ const TopNaveber = () => {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            <IconButton
+            {/* <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="menu"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
             <Typography variant="h6" className={classes.title}>
               Pyra Commerce
             </Typography>
             <Typography variant="h6" className={classes.title}>
               <MenuList className="menu">
                 <MenuItem>
-                
-                  <FontAwesomeIcon icon={faHome} href="/Home" />
-                  Home
-                 
+                  <Link className="MenuText" to="/Home">
+                    <FontAwesomeIcon icon={faHome} />
+                    Home
+                  </Link>
                 </MenuItem>
+
                 <MenuItem>
-                  <FontAwesomeIcon icon={faSortAmountUp} href="/Orders"/>
-                  Orders
+                  <Link className="MenuText" to="/Orders">
+                    <FontAwesomeIcon icon={faSortAmountUp} />
+                    Orders
+                  </Link>
                 </MenuItem>
+
                 <MenuItem>
-                  <FontAwesomeIcon icon={faUserShield} href="/Admin" />
-                  Admin
+                  <Link className="MenuText" to="/Admin">
+                    <FontAwesomeIcon icon={faUserShield} />
+                    Admin
+                  </Link>
                 </MenuItem>
+
                 <MenuItem>
-                  <FontAwesomeIcon icon={faIdBadge} href="/Deals" />
-                  Deals
+                  <Link className="MenuText" to="/Deals">
+                    <FontAwesomeIcon icon={faIdBadge} />
+                    Deals
+                  </Link>
                 </MenuItem>
+
                 <MenuItem>
-                  <FontAwesomeIcon icon={faBlog}  href="/Blog"/>
-                  Blog
+                  <Link className="MenuText" to="/Blog">
+                    <FontAwesomeIcon icon={faBlog} />
+                    Blog
+                  </Link>
                 </MenuItem>
+
                 <MenuItem>
-                  <FontAwesomeIcon icon={faIdCard} href="/Contact"/>
-                  Contact
+                  <Link className="MenuText" to="/Contact">
+                    <FontAwesomeIcon icon={faIdCard} />
+                    Contact
+                  </Link>
                 </MenuItem>
               </MenuList>
             </Typography>
-            <Button color="inherit" href="/Login" >Login</Button>
+            <Link className="MenuText" to="/Login_1">
+              <Button color="inherit">Login</Button>
+            </Link>
           </Toolbar>
         </AppBar>
       </div>

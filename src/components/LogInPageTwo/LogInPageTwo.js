@@ -1,11 +1,13 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./LoginPageTow.css";
 
 const LogInPageTwo = () => {
   return (
     <div>
-        <br/><br/>
+      <br />
+      <br />
       <div className="logIn_box_two">
         <div className="login_box_inner_two">
           <h5>Login</h5>
@@ -14,28 +16,28 @@ const LogInPageTwo = () => {
             <Form.Row>
               <Col>
                 <Form.Control
-                className="inputBox"
+                  className="inputBox"
                   type="email"
                   name="email"
                   placeholder="Email"
-                //   onBlur={handleBlur_t}
+                  //   onBlur={handleBlur_t}
                   required
                 />
-                <br/> <br/>
+                <br /> <br />
                 <Form.Control
-                className="inputBox"
+                  className="inputBox"
                   type="password"
                   name="password"
                   placeholder="Password"
-                //   onBlur={handleBlur_t}
+                  //   onBlur={handleBlur_t}
                   required
                 />
-                <br/>
+                <br />
                 <Form.Check
                   type="checkbox"
                   name="checkbox"
                   label="Remember Me"
-                //   onBlur={handleBlur_t}
+                  //   onBlur={handleBlur_t}
                   required
                 />
               </Col>
@@ -52,9 +54,9 @@ const LogInPageTwo = () => {
           <p className="alraedy_text_two">
             <small>
               Don't have an account?
-              <a className="login_text_two" href="/LoginPageOne">
-                Creat an account
-              </a>
+              <Link to="/Login_1">
+                <a className="login_text_two">Creat an account</a>
+              </Link>
             </small>
           </p>
         </div>

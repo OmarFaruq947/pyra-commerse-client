@@ -5,6 +5,7 @@ import firebaseConfig from "./firebase.config";
 import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 firebase.initializeApp(firebaseConfig);
 
 const LoginPageOne = () => {
@@ -28,8 +29,8 @@ const LoginPageOne = () => {
 
   return (
     <div>
-        <br/>
-        <br/>
+      <br />
+      <br />
       <div className="card">
         <Container>
           <Row>
@@ -42,7 +43,7 @@ const LoginPageOne = () => {
                     <Form.Row>
                       <Col>
                         <Form.Control
-                        className="inputBox"
+                          className="inputBox"
                           type="text"
                           name="FirstName"
                           title="Space is not acceptable"
@@ -53,7 +54,7 @@ const LoginPageOne = () => {
                         <br />
                         <br />
                         <Form.Control
-                        className="inputBox"
+                          className="inputBox"
                           type="email"
                           name="email"
                           placeholder="Username or Email"
@@ -63,7 +64,7 @@ const LoginPageOne = () => {
                         <br />
                         <br />
                         <Form.Control
-                        className="inputBox"
+                          className="inputBox"
                           type="password"
                           name="password"
                           placeholder="Password"
@@ -75,7 +76,7 @@ const LoginPageOne = () => {
                       </Col>
                     </Form.Row>
                     <button
-                    to="/Home"
+                      to="/Home"
                       type="submit"
                       value="Submit"
                       className="createAcountBtn"
@@ -87,9 +88,9 @@ const LoginPageOne = () => {
                   <p className="alraedy_text">
                     <small>
                       Already have an account?
-                      <a className="login_text" href="/LogInPageTwo">
-                        Login
-                      </a>
+                      <Link to="/Login_2">
+                        <a className="login_text">Login</a>
+                      </Link>
                     </small>
                   </p>
                 </div>
@@ -98,14 +99,14 @@ const LoginPageOne = () => {
                 <div className="googleSignInSection">
                   <br />
                   <br />
-                  <Button 
-                  to="/Home"
-                  className="btn"
-                  variant="outlined" 
-                  color="primary"
-                  onClick={handleGoogleSignIn}
+                  <Button
+                    to="/Home"
+                    className="btn"
+                    variant="outlined"
+                    color="primary"
+                    onClick={handleGoogleSignIn}
                   >
-                     Google
+                    Google
                   </Button>
                 </div>
               </div>
