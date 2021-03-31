@@ -1,0 +1,56 @@
+.logIn_box{
+    border: 1px solid rgb(221, 221, 221);
+    width: 461px;
+    height: 300px;
+    margin: 1% auto;
+}
+.login_box_inner{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.createAcountBtn{
+    background-color: #3F51B5;
+    padding:5px 169px;
+    border: none;
+    color: white;
+    border-radius: 5px; 
+}
+.alraedy_text{
+    text-align: center;
+}
+.login_text{
+    text-decoration:underline;
+    color: #3F51B5;
+}
+.requarment_login{
+    font-size: 15px;
+    color: rgb(204, 204, 204);
+}
+
+@media screen and (max-width:720px){
+    .logIn_box{
+        width: 400px;
+        height: 516px;
+        margin: 15% auto;
+    }
+    .createAcountBtn{
+        padding:5px 150px;
+        font-size: 10px;
+    }
+}
+
+.googleSignInSection{
+    
+    text-align: center;
+}
+
+.btn{
+    padding: 10px 100px;
+    border-radius: 50px;
+    width: 400px;
+}
+.inputBox{
+    width: 352px;
+    height: 27px;
+}

@@ -1,0 +1,51 @@
+.logIn_box_two{
+    border: 1px solid rgb(221, 221, 221);
+    width: 400px;
+    height: 270px;
+    margin: 1% auto;
+}
+.login_box_inner_two{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.createAcountBtn_two{
+    background-color:#3F51B5;
+    padding:5px 163px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+   
+}
+.alraedy_text_two,.OR_two{
+    text-align: center;
+}
+.login_text_two{
+    text-decoration:underline;
+    color: #3F51B5;
+}
+
+.google_github_login_two{
+margin-left: 32%;
+margin-right: 32%;
+}
+
+@media screen and (max-width:720px){
+    .logIn_box_two{
+        width: 400px;
+        margin: 5% auto;
+    }
+    .createAcountBtn_two{
+        padding:5px 160px;
+    }
+
+    .google_github_login_two{
+        margin-left: 23%;
+        margin-right: 23%;
+        }
+}
+.inputBox{
+    width: 352px;
+    height: 27px;
+    background-color: white;
+}
