@@ -1,0 +1,37 @@
+#leftColumn{
+    background-color: #203D37;
+    height: 520px;
+    color: white;
+    border-radius: none;
+}
+#rightColumn{
+
+}
+.adminLink{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 40px;
+}
+.adminLink:hover{
+    color: lightgray;
+}
+.table_grid{
+    border:none;
+}
+
+.addProductHeading{
+    margin-top: 50px;
+    color: #8c96cc;
+   text-align: center;
+}
+.hr{
+    height: 4px;
+    width: 40px;
+    background-color:#3F51B5;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: -18px;
+    margin-bottom: 70px;
+}

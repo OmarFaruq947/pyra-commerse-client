@@ -1,0 +1,15 @@
+.cardBody{
+    width: 200px;
+
+    
+}
+.cardImg{
+    width: 190px;
+}
+.card{
+    border: 1px solid red;
+}
+.cardButton{
+    width: 200px;
+    background-color: #3F51B5;
+}

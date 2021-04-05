@@ -1,71 +1,69 @@
-import './App.css';
+import "./App.css";
 import React from "react";
-import LoginPageOne from './components/LogInPageOne/LoginPageOne';
-import LogInPageTwo from './components/LogInPageTwo/LogInPageTwo';
-import TopNaveber from './components/Top Navber/TopNaveber';
-import Home from './components/Home/Home';
-import Contact from './components/Contact/Contact';
-import Deals from './components/Deals/Deals';
-import Admin from './components/Admin/Admin';
-import Blog from './components/Blog/Blog';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import LoginPageOne from "./components/LogInPageOne/LoginPageOne";
+import LogInPageTwo from "./components/LogInPageTwo/LogInPageTwo";
+import TopNaveber from "./components/Top Navber/TopNaveber";
+import Home from "./components/Home/Home";
+import Contact from "./components/Contact/Contact";
+import Deals from "./components/Deals/Deals";
 
+import Blog from "./components/Blog/Blog";
 
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import AddProduct from "./components/Admin/AddProduct/AddProduct";
+import EditProduct from "./components/Admin/EditProduct/EditProduct";
+import ManegeProduct from "./components/Admin/ManegeProduct/ManegeProduct";
 
 function App() {
   return (
     <div>
-      
-             <Router>
-             <TopNaveber></TopNaveber>
-          <Switch>
-            <Route path="/Home">
+      <Router>
+        <TopNaveber></TopNaveber>
+        <Switch>
+          <Route path="/Home">
+            <Home />
+          </Route>
 
-              <Home />
-            </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-            <Route exact path="/">
-              <Home/>
-            </Route>
+          <Route path="/Orders">
+            <LoginPageOne />
+          </Route>
 
-            <Route path="/Orders">
-             <LoginPageOne/>
-            </Route>
+          <Route path="/AddProduct">
+            <AddProduct />
+          </Route>
 
-            <Route path="/Admin">
-             <Admin/>
-            </Route>
+          <Route path="/EditProduct">
+            <EditProduct />
+          </Route>
 
-            <Route path="/Contact">
-             <Contact/>
-            </Route>
+          <Route path="/ManegeProduct">
+            <ManegeProduct />
+          </Route>
 
-            <Route path="/Blog">
-              <Blog/>
-            </Route>
+          <Route path="/Contact">
+            <Contact />
+          </Route>
 
-            <Route path="/Deals">
-              <Deals/>
-            </Route>
-            <Route path="/Login_1">
-              <LoginPageOne/>
-            </Route>
+          <Route path="/Blog">
+            <Blog />
+          </Route>
 
-            <Route path="/LogIn_2">
-              <LogInPageTwo/>
-            </Route>
+          <Route path="/Deals">
+            <Deals />
+          </Route>
+          <Route path="/Login_1">
+            <LoginPageOne />
+          </Route>
 
-          </Switch>
-        </Router>
-
-
-
+          <Route path="/LogIn_2">
+            <LogInPageTwo />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./TopNavber.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -19,6 +19,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { MenuItem, MenuList } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
+
+
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
@@ -35,6 +38,8 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const TopNaveber = () => {
   const classes = useStyles();
+ 
+  
   return (
     <div>
       <div className={classes.root}>
@@ -55,42 +60,42 @@ const TopNaveber = () => {
               <MenuList className="menu">
                 <MenuItem>
                   <Link className="MenuText" to="/Home">
-                    <FontAwesomeIcon icon={faHome} />
+                    <FontAwesomeIcon icon={faHome} /><br/>
                     Home
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Orders">
-                    <FontAwesomeIcon icon={faSortAmountUp} />
+                    <FontAwesomeIcon icon={faSortAmountUp}/><br/>
                     Orders
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
-                  <Link className="MenuText" to="/Admin">
-                    <FontAwesomeIcon icon={faUserShield} />
+                  <Link className="MenuText" to="/AddProduct">
+                    <FontAwesomeIcon icon={faUserShield}/><br/>
                     Admin
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Deals">
-                    <FontAwesomeIcon icon={faIdBadge} />
+                    <FontAwesomeIcon icon={faIdBadge}/><br/>
                     Deals
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Blog">
-                    <FontAwesomeIcon icon={faBlog} />
+                    <FontAwesomeIcon icon={faBlog}/><br/>
                     Blog
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Contact">
-                    <FontAwesomeIcon icon={faIdCard} />
+                    <FontAwesomeIcon icon={faIdCard}/><br/>
                     Contact
                   </Link>
                 </MenuItem>

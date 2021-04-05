@@ -1,0 +1,19 @@
+.contactPageSection{
+    display: flex;
+}
+.col-1{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+.col-2{
+    width: 50%;
+    height: 100%;
+    margin-top: 150px;
+    margin-right: 50px;
+}
+.SMSImg{
+    width: 400px;
+}
