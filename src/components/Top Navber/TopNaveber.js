@@ -8,6 +8,7 @@ import {
   faIdBadge,
   faBlog,
   faIdCard,
+  faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -101,6 +102,9 @@ const TopNaveber = () => {
                 </MenuItem>
               </MenuList>
             </Typography>
+            <Link className="MenuText" to="/Checkout"><FontAwesomeIcon icon={faShoppingCart}/>
+              <Button color="inherit">Checkout</Button>
+            </Link>
             <Link className="MenuText" to="/Login_1">
               <Button color="inherit">Login</Button>
             </Link>

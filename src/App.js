@@ -13,11 +13,14 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AddProduct from "./components/Admin/AddProduct/AddProduct";
 import EditProduct from "./components/Admin/EditProduct/EditProduct";
 import ManegeProduct from "./components/Admin/ManegeProduct/ManegeProduct";
+import CheckOut from "./components/CheckOut/CheckOut";
+
 
 function App() {
   return (
     <div>
       <Router>
+        
         <TopNaveber></TopNaveber>
         <Switch>
           <Route path="/Home">
@@ -62,6 +65,11 @@ function App() {
           <Route path="/LogIn_2">
             <LogInPageTwo />
           </Route>
+
+          <Route path="/Checkout">
+            <CheckOut/>
+          </Route>
+          
         </Switch>
       </Router>
     </div>
