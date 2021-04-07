@@ -1,6 +1,6 @@
 .checkout_card {
     max-width: 800px;
-    height: 270px;
+    height: 300px;
     margin: 0 auto;
   }
   .checkout_page{
@@ -48,4 +48,7 @@
     margin: auto;
     margin-top: -18px;
     margin-bottom: 70px;
+}
+.OrdersLink{
+  text-decoration:none;
 }

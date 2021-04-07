@@ -6,21 +6,19 @@ import TopNaveber from "./components/Top Navber/TopNaveber";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
 import Deals from "./components/Deals/Deals";
-
 import Blog from "./components/Blog/Blog";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AddProduct from "./components/Admin/AddProduct/AddProduct";
 import EditProduct from "./components/Admin/EditProduct/EditProduct";
 import ManegeProduct from "./components/Admin/ManegeProduct/ManegeProduct";
 import CheckOut from "./components/CheckOut/CheckOut";
+import Order from "./components/Order/Order";
 
 
 function App() {
   return (
     <div>
       <Router>
-        
         <TopNaveber></TopNaveber>
         <Switch>
           <Route path="/Home">
@@ -32,7 +30,7 @@ function App() {
           </Route>
 
           <Route path="/Orders">
-            <LoginPageOne />
+            <Order/>
           </Route>
 
           <Route path="/AddProduct">
@@ -68,6 +66,10 @@ function App() {
 
           <Route path="/Checkout">
             <CheckOut/>
+          </Route>
+
+          <Route path="/CheckOutBuyNowBtn">
+          <CheckOut/>
           </Route>
           
         </Switch>
