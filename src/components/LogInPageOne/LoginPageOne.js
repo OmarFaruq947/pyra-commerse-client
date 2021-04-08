@@ -1,14 +1,21 @@
+import React, { useContext, useState } from "react";
 import "./LoginPageOne.css";
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
-import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
+import { userContext } from "../../App";
+
+
 firebase.initializeApp(firebaseConfig);
 
 const LoginPageOne = () => {
+
+  const {loggedInUser, setLoggedInUser} = useContext(userContext); //...............................(V.V.V.I  use context API each time)
+  
+
   const [user, setUser] = useState({});
   const provider = new firebase.auth.GoogleAuthProvider();
   const handleGoogleSignIn = () => {
@@ -19,8 +26,8 @@ const LoginPageOne = () => {
         var credential = result.credential;
         var token = credential.accessToken;
         var user = result.user;
-        setUser(user);
-        console.log(user);
+        setLoggedInUser(user);
+        // console.log( 'user info by gmail..',user); //...............................info by gmail
       })
       .catch((error) => {
         var errorMessage = error.message;
@@ -114,9 +121,6 @@ const LoginPageOne = () => {
           </Row>
         </Container>
       </div>
-
-      <h3>email: {user.email}</h3>
-      <img src={user.photoURL} alt="" />
     </div>
   );
 };

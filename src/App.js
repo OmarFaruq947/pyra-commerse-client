@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { createContext, useState } from "react";
 import LoginPageOne from "./components/LogInPageOne/LoginPageOne";
 import LogInPageTwo from "./components/LogInPageTwo/LogInPageTwo";
 import TopNaveber from "./components/Top Navber/TopNaveber";
@@ -14,10 +14,16 @@ import ManegeProduct from "./components/Admin/ManegeProduct/ManegeProduct";
 import CheckOut from "./components/CheckOut/CheckOut";
 import Order from "./components/Order/Order";
 
+export const userContext = createContext();
+
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({})
+  const [productInfo, setProductInfo] = useState([])
   return (
-    <div>
+  
+   
+      <userContext.Provider value={{ loggedInUser, setLoggedInUser ,productInfo, setProductInfo }}>
       <Router>
         <TopNaveber></TopNaveber>
         <Switch>
@@ -74,7 +80,7 @@ function App() {
           
         </Switch>
       </Router>
-    </div>
+      </userContext.Provider>
   );
 }
 

@@ -35,49 +35,46 @@ const useStyles = makeStyles((theme: Theme) =>
 const AddProduct = () => {
   const classes = useStyles();
 
-  const {register, handleSubmit, watch, errors} = useForm()
+  const { register, handleSubmit, watch, errors } = useForm();
   const [imageURL, setImageURL] = useState(null);
 
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     const productData = {
       name: data.name,
-      imageURL:imageURL
+      wight: data.wight,
+      price: data.price,
+      description:data.description,
+      imageURL: imageURL,
     };
-    const url = `http://localhost:5000/addEvent`
-    console.log('data',data);
-    console.log(productData);
+    const url = `http://localhost:5000/AddProduct`;
+    // console.log('data...',data);
 
+    // console.log('Product data..',productData);
     fetch(url, {
-      method: 'POST',
-      headers:{
-        'content-type': 'application/json'
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
       },
-      body: JSON.stringify(productData)
-    })
-    .then(res => console.log('server side response ok'))
-
+      body: JSON.stringify(productData),
+    }).then((res) => console.log("server side response ok", res)); //................................................(1)
   };
-// const handleSubmit = formSubmit => {
 
-//   console.log('form submit')
-// }
-
+  // ............Imag BB upload file section start.............
   const handleImageUpload = (Commerce) => {
-    console.log("problem...", Commerce.target.files);
+    // console.log("problem...", Commerce.target.files);
     const imageData = new FormData();
     imageData.set("key", "dfb313aeb94c3a9ea3817ab2ab1642b9");
     imageData.append("image", Commerce.target.files[0]);
-
     axios
       .post("https://api.imgbb.com/1/upload", imageData)
       .then(function (response) {
-        setImageURL(response.data.data.display_url);
+        setImageURL(response.data.data.display_url); // img dynamic url
       })
       .catch(function (error) {
-
         console.log(error);
       });
   };
+  // ............Imag BB upload file section END.............
 
   return (
     <div>
@@ -110,25 +107,71 @@ const AddProduct = () => {
             <h3 className="addProductHeading">Add Product</h3>
             <div className="hr"></div>
             <Paper className={classes.paper} id="rightColumn">
-              
               <form className={classes.root} onSubmit={handleSubmit(onSubmit)}>
-                <div>
-                  Product name: <br/>
-                  <input type="text" required  defaultValue="Product Name" name="name" ref={register}/> <br/><br/>
-                  Product Wight: <br/>
-                  <input type="number" required  defaultValue="Wight"/> <br/><br/>
+                <div className="add_product_form">
+                  <div className="ProductName_wight">
+                    Product name:
+                    <input
+                      className="input_box_addProduct"
+                      type="text"
+                      required
+                      placeholder="Product name"
+                      name="name"
+                      ref={register}
+                    />
+                    <span className="Product_wight">
+                      Product Wight:
+                      <input
+                        className="input_box_addProduct"
+                        type="number"
+                        required
+                        placeholder="Product Wight"
+                        name="wight"
+                        ref={register}
+                      />
+                    </span>
+                  </div>
+                  <br />
+                  <br />
+                  <div className="add_product_upload_product">
+                    Product Price:
+                    <input
+                      className="input_box_addProduct"
+                      type="number"
+                      required
+                      placeholder="Product Price"
+                      name="price"
+                      ref={register}
+                    />
+                    <span className="product_pic">
+                      Upload file:
+                      <input type="file" onChange={handleImageUpload} />
+                    </span>
+                  </div>
+                  <br/><br/>
+                  <span>
+                    <textarea
+                      className="textarea"
+                      rows="5"
+                      cols="110"
+                      name="comment"
+                      form="usrform"
+                      name="description"
+                      ref={register}
+                      placeholder="Write product description...(Optional)"
+                    >
+                    </textarea>
+                  </span>
+                  <br />
+                  <br />
+                  Submit:
+                  <button className="submit_button" type="submit">
+                    Submit
+                  </button>
+                  <button className="reset_button" type="reset">
+                    Reset
+                  </button>
                 </div>
-
-                <div className="add_product_button">
-                  Product Price: <br/>
-                  <input type="number" required defaultValue="Price"/> <br/><br/>
-                  Upload product pic: <br/>
-                  <input type="file"  onChange={handleImageUpload} />
-                </div>
-
-                Submit: <br/>
-                <input type="submit"/>
-
               </form>
             </Paper>
           </Grid>

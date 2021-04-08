@@ -1,45 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Home.css';
-import FackData from '../../FackData.json';
+
 import HomePageContent from './HomePageContent';
 import { Container } from 'react-bootstrap';
+import { userContext } from '../../App';
 
 
 
 const Home = () => {
 
-const [data, setData] = useState([]);
-useEffect(() => {
-    setData(FackData);
-    console.log('fack data',FackData);
-})
+    const {productInfo, setProductInfo} = useContext(userContext);
+console.log('product info......',productInfo)
+
+const [commerce, setCommerce] = useState([]);
+useEffect(()=> {
+    fetch('http://localhost:5000/Commerce')
+    .then(res => res.json())
+    .then(data => setProductInfo(data))
+}, [])
 
 
-// const [commerce, setCommerce] = useState([]);
-// useEffect(()=> {
-//     fetch('http://localhost:5000/Commerce')
-//     .then(res => res.json())
-//     .then(data => setCommerce(data))
-// }, [])
+
 
 
     return (
-        <Container value={data}>
+        <Container value={commerce}>
             <div className="cards">
             {
-                data.map(info => <HomePageContent Data={info}>{info.productName}</HomePageContent>)
+                productInfo.map(info => <HomePageContent Data={info}>{info.productName}</HomePageContent>)
             }
             </div>
-
-
-            {/* {
-            <div className="col-md-3">
-                <img style={{height:'300px'}} src={commerce.imageURL} alt=""/>
-
-            </div>
-            } */}
-
-
         </Container>
     );
 };

@@ -28,3 +28,30 @@
     margin-top: -18px;
     margin-bottom: 70px;
 }
+.add_product_form{
+    margin-left: 30px;
+}
+.input_box_addProduct{
+    width: 300px;
+    height: 35px;
+    border: none;
+    background-color: #8C96CC;
+    color: white;
+    border-radius: 5px;
+}
+.ProductName_wight,.add_product_upload_product{
+    display: flex;
+}
+.product_pic,.Product_wight{
+    margin-left: 60px;
+}
+.submit_button,.reset_button,.upload_product_pic{
+    background-color: #8C96CC;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    color: white;
+}
+.reset_button{
+    margin-left: 20px;
+}

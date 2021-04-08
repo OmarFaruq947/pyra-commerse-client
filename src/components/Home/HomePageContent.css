@@ -3,7 +3,9 @@
 }
 .cardImg{
     width: 200px;
+    height: 200px;
     margin-left: 15%;
+    border: 1px solid #3F51B5;
 }
 .card_HomePage{
     box-shadow:
@@ -27,4 +29,7 @@
 .price_text{
     color: #3F51B5;
     margin-left: 28%; 
+}
+.ProductInfo{
+    text-align: center;
 }

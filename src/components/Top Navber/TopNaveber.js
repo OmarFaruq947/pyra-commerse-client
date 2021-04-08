@@ -19,9 +19,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { MenuItem, MenuList } from "@material-ui/core";
 import { Link } from "react-router-dom";
-
-
-
+import { userContext } from "../../App";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -38,22 +36,24 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const TopNaveber = () => {
+  const {loggedInUser ,productInfo} = useContext(userContext);
+  console.log("login info...", loggedInUser);
+
   const classes = useStyles();
- 
-  
+
   return (
     <div>
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-            {/* <IconButton
+            <IconButton
               edge="start"
               className={classes.menuButton}
               color="inherit"
               aria-label="menu"
             >
               <MenuIcon />
-            </IconButton> */}
+            </IconButton>
             <Typography variant="h6" className={classes.title}>
               Pyra Commerce
             </Typography>
@@ -61,49 +61,59 @@ const TopNaveber = () => {
               <MenuList className="menu">
                 <MenuItem>
                   <Link className="MenuText" to="/Home">
-                    <FontAwesomeIcon icon={faHome} /><br/>
+                    <FontAwesomeIcon icon={faHome} />
+                    <br />
                     Home
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Orders">
-                    <FontAwesomeIcon icon={faSortAmountUp}/><br/>
+                    <FontAwesomeIcon icon={faSortAmountUp} />
+                    <br />
                     Orders
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/AddProduct">
-                    <FontAwesomeIcon icon={faUserShield}/><br/>
+                    <FontAwesomeIcon icon={faUserShield} />
+                    <br />
                     Admin
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Deals">
-                    <FontAwesomeIcon icon={faIdBadge}/><br/>
+                    <FontAwesomeIcon icon={faIdBadge} />
+                    <br />
                     Deals
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Blog">
-                    <FontAwesomeIcon icon={faBlog}/><br/>
+                    <FontAwesomeIcon icon={faBlog} />
+                    <br />
                     Blog
                   </Link>
                 </MenuItem>
 
                 <MenuItem>
                   <Link className="MenuText" to="/Contact">
-                    <FontAwesomeIcon icon={faIdCard}/><br/>
+                    <FontAwesomeIcon icon={faIdCard} />
+                    <br />
                     Contact
                   </Link>
                 </MenuItem>
               </MenuList>
             </Typography>
-            <Link className="MenuText" to="/Checkout"><FontAwesomeIcon icon={faShoppingCart}/>
-              <Button color="inherit">Checkout</Button>
+
+            <img className="userPhoto" src={loggedInUser.photoURL} alt="SignIn" />
+
+            <Link className="MenuText_Checkout" to="/Checkout">
+              <FontAwesomeIcon icon={faShoppingCart} />
+              {/* <Button color="inherit">Checkout</Button> */}
             </Link>
             <Link className="MenuText" to="/Login_1">
               <Button color="inherit">Login</Button>

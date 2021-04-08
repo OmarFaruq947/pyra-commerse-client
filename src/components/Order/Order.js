@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { userContext } from '../../App';
 import './Order.css';
 
 const Order = () => {
+    const {loggedInUser , productInfo}=useContext(userContext);
+    // const {productInfo} = useContext(userContext);
+
+    console.log('loggedin user...', loggedInUser);
+    console.log('product info', productInfo);
     return (
         <div>
 
-            <h1>
-               order section//.......
+            {/* product information  */}
+            <h1> price: {productInfo.price}  </h1> 
 
-            </h1>
+
+
+            {/* user information */}
+            <h3>email: {loggedInUser.email}</h3>
+            <img src={loggedInUser.photoURL} alt="" />
+
         </div>
     );
 };
